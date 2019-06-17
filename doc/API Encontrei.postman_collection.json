@@ -128,6 +128,258 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Estabelecimento",
+			"item": [
+				{
+					"name": "GET - Estabelecimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/estabelecimento",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Estabelecimento (ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/estabelecimento/1",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Estabelecimento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/estabelecimento/1",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Estabelecimento",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "categoria",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "titulo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "numero",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "uf",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "telefone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sobre",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "longitute",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "whatsapp",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "facebook",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/estabelecimento",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Estabelecimento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "categoria",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "titulo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "numero",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "uf",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "telefone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sobre",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "longitute",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "whatsapp",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "facebook",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/estabelecimento",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
