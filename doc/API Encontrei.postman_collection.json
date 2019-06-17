@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "80842bed-97d2-4d23-8390-e445f144158b",
+		"name": "API Encontrei",
+		"description": "Documentação da API Encontrei",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "GET - Categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/categoria",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Categoria (ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/categoria/2",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"categoria",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Categoria",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Alimentacao",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjZxYecmPHiAhXNG7kGHW-QBvUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbutterfly%2F&psig=AOvVaw1GslkPjWraCIHKdHBN1M_w&ust=1560884015492570",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/categoria/2",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"categoria",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/categoria/2",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"categoria",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Alimentacao",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjZxYecmPHiAhXNG7kGHW-QBvUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbutterfly%2F&psig=AOvVaw1GslkPjWraCIHKdHBN1M_w&ust=1560884015492570",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/categoria",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
