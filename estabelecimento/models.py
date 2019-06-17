@@ -13,16 +13,18 @@ class Estabelecimento(models.Model):
     endereco = models.CharField(max_length=100)
     numero = models.CharField(max_length=10)
     bairro = models.CharField(max_length=50)
-    cep = models.IntegerField(max_length=8)
+    cep = models.IntegerField()
     cidade = models.CharField(max_length=50)
     uf = models.CharField(max_length=2)
-    telefone = models.IntegerField(max_length=11)
+    telefone = models.IntegerField()
     email = models.EmailField()
     sobre = models.TextField(max_length=255)
     longitude = models.FloatField()
     latitude = models.FloatField()
-    whatsapp = models.IntegerField(max_length=11)
+    whatsapp = models.IntegerField()
     facebook = models.URLField(max_length=100)
+    criado = models.DateTimeField(auto_created=True)
+    ativo = models.BooleanField(default=False)
 
     database = 'db_encontrei'
 
