@@ -26,3 +26,5 @@ class EstabelecimentoSerializer(ModelSerializer):
             'whatsapp',
             'facebook'
         )
+
+    ordering =['titulo']

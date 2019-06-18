@@ -6,3 +6,4 @@ class CategoriaSerializer(ModelSerializer):
     class Meta:
         model = Categoria
         fields = ('id', 'titulo', 'imagem')
+        ordering = ['titulo']

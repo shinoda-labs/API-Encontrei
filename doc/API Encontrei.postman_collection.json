@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "80842bed-97d2-4d23-8390-e445f144158b",
+		"_postman_id": "26c1cb9b-0d77-4cea-84b5-c29e00872836",
 		"name": "API Encontrei",
 		"description": "Documentação da API Encontrei",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -13,7 +13,13 @@
 					"name": "GET - Categoria",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{api_url}}/categoria",
 							"host": [
@@ -30,15 +36,21 @@
 					"name": "GET - Categoria (ID)",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{api_url}}/categoria/2",
+							"raw": "{{api_url}}/categoria/4",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"categoria",
-								"2"
+								"4"
 							]
 						}
 					},
@@ -48,30 +60,44 @@
 					"name": "PATCH - Categoria",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
 									"key": "titulo",
 									"value": "Alimentacao",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "imagem",
 									"value": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjZxYecmPHiAhXNG7kGHW-QBvUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbutterfly%2F&psig=AOvVaw1GslkPjWraCIHKdHBN1M_w&ust=1560884015492570",
-									"type": "text"
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ativo",
+									"value": "false",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
 						"url": {
-							"raw": "{{api_url}}/categoria/2",
+							"raw": "{{api_url}}/categoria/6",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"categoria",
-								"2"
+								"6"
 							]
 						}
 					},
@@ -81,7 +107,13 @@
 					"name": "DELETE - Categoria",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{api_url}}/categoria/2",
 							"host": [
@@ -99,7 +131,13 @@
 					"name": "POST - Categoria",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -136,7 +174,13 @@
 					"name": "GET - Estabelecimento",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{api_url}}/estabelecimento",
 							"host": [
@@ -150,10 +194,87 @@
 					"response": []
 				},
 				{
+					"name": "GET - Estabelecimento (Categoria)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/estabelecimento?categoria=6",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento"
+							],
+							"query": [
+								{
+									"key": "categoria",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Estabelecimento (Categoria) TODO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/estabelecimento?titulo=Teste",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento"
+							],
+							"query": [
+								{
+									"key": "titulo",
+									"value": "Teste"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET - Estabelecimento (ID)",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{api_url}}/estabelecimento/1",
 							"host": [
@@ -171,7 +292,13 @@
 					"name": "DELETE - Estabelecimento",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{api_url}}/estabelecimento/1",
 							"host": [
@@ -189,7 +316,13 @@
 					"name": "PATCH - Estabelecimento",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -271,12 +404,13 @@
 							]
 						},
 						"url": {
-							"raw": "{{api_url}}/estabelecimento",
+							"raw": "{{api_url}}/estabelecimento/2",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
-								"estabelecimento"
+								"estabelecimento",
+								"2"
 							]
 						}
 					},
@@ -286,7 +420,13 @@
 					"name": "POST - Estabelecimento",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
