@@ -13,7 +13,8 @@ class EstabelecimentoSerializer(ModelSerializer):
             'categoria',
             'titulo',
             'imagem',
-            'endereco',
+            'endereco_completo',
+            'rua',
             'numero',
             'bairro',
             'cep',
@@ -27,4 +28,4 @@ class EstabelecimentoSerializer(ModelSerializer):
             'facebook'
         )
 
-    ordering =['titulo']
+    ordering = ['titulo']

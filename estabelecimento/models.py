@@ -7,10 +7,10 @@ class Estabelecimento(models.Model):
         db_table = 'tb_estabelecimento'
 
     id = models.AutoField(primary_key=True, editable=False, auto_created=True)
-    categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT, editable=False)
+    categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
     titulo = models.CharField(max_length=50)
     imagem = models.URLField(max_length=255)
-    endereco = models.CharField(max_length=100)
+    rua = models.CharField(max_length=100)
     numero = models.CharField(max_length=10)
     bairro = models.CharField(max_length=50)
     cep = models.BigIntegerField()
@@ -26,6 +26,10 @@ class Estabelecimento(models.Model):
     criado = models.DateTimeField(auto_now_add=True)
     atualizado = models.DateTimeField(auto_now=True)
     ativo = models.BooleanField(default=False)
+
+    @property
+    def endereco_completo(self):
+        return "{}, N°{}, {} - {} - {} / {}".format(self.rua, self.numero, self.bairro, self.cidade, self.cep, self.uf)
 
     database = 'db_encontrei'
 
