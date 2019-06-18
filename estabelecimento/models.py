@@ -25,7 +25,8 @@ class Estabelecimento(models.Model):
     facebook = models.URLField(max_length=100)
     criado = models.DateTimeField(auto_now_add=True)
     atualizado = models.DateTimeField(auto_now=True)
-    ativo = models.BooleanField(default=False)
+    aprovado = models.BooleanField(default=False)
+    ativo = models.BooleanField(default=True)
 
     @property
     def endereco_completo(self):

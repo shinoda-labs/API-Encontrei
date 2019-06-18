@@ -10,8 +10,8 @@ class EstabelecimentoSerializer(ModelSerializer):
         model = Estabelecimento
         fields = (
             'id',
-            'categoria',
             'titulo',
+            'categoria',
             'imagem',
             'endereco_completo',
             'rua',
