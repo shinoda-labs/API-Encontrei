@@ -1,10 +1,10 @@
 from rest_framework.serializers import ModelSerializer
 from estabelecimento.models import Estabelecimento
-from categoria.api.serializers import CategoriaSerializer
+from categoria.api.serializers import CategoriaEstabelecimentoSerializer
 
 
 class EstabelecimentoSerializer(ModelSerializer):
-    categoria = CategoriaSerializer()
+    categoria = CategoriaEstabelecimentoSerializer()
 
     class Meta:
         model = Estabelecimento

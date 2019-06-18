@@ -7,3 +7,10 @@ class CategoriaSerializer(ModelSerializer):
         model = Categoria
         fields = ('id', 'titulo', 'imagem')
         ordering = ['titulo']
+
+
+class CategoriaEstabelecimentoSerializer(ModelSerializer):
+    class Meta:
+        model = Categoria
+        fields = ('titulo', 'imagem')
+        ordering = ['titulo']
