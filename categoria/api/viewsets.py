@@ -24,3 +24,13 @@ class CategoriaViewSet(ModelViewSet):
     def reprovar(self, request, pk):
         categoria = CategoriaFullSerializer().reprovar_categoria(pk)
         return Response(data=categoria, status=200)
+
+    @action(methods=['patch'], detail=True)
+    def ativar(self, request, pk):
+        categoria = CategoriaFullSerializer().ativar_categoria(pk)
+        return Response(data=categoria, status=200)
+
+    @action(methods=['patch'], detail=True)
+    def desativar(self, request, pk):
+        categoria = CategoriaFullSerializer().desativar_categoria(pk)
+        return Response(data=categoria, status=200)

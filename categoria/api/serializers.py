@@ -45,3 +45,27 @@ class CategoriaFullSerializer(ModelSerializer):
             return serializer.data
         except Exception as e:
             raise ValidationError({'error': 'A Categoria com o código {} não existe.'.format(id)})
+
+    def ativar_categoria(self, id):
+        try:
+            categoria = Categoria.objects.get(pk=id)
+
+            serializer = CategoriaFullSerializer(categoria, data={'ativo': True}, partial=True)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return serializer.data
+        except Exception as e:
+            raise ValidationError({'error': 'A Categoria com o código {} não existe.'.format(id)})
+
+    def desativar_categoria(self, id):
+        try:
+            categoria = Categoria.objects.get(pk=id)
+
+            serializer = CategoriaFullSerializer(categoria, data={'ativo': False}, partial=True)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return serializer.data
+        except Exception as e:
+            raise ValidationError({'error': 'A Categoria com o código {} não existe.'.format(id)})
