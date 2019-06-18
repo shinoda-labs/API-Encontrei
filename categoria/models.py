@@ -9,6 +9,7 @@ class Categoria(models.Model):
     titulo = models.CharField(max_length=50)
     imagem = models.URLField(max_length=255)
     criado = models.DateTimeField(auto_now_add=True)
+    atualizado = models.DateTimeField(auto_now=True)
     ativo = models.BooleanField(default=True)
 
     database = 'db_encontrei'

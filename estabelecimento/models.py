@@ -23,7 +23,8 @@ class Estabelecimento(models.Model):
     latitude = models.FloatField()
     whatsapp = models.BigIntegerField()
     facebook = models.URLField(max_length=100)
-    criado = models.DateTimeField(auto_created=True)
+    criado = models.DateTimeField(auto_now_add=True)
+    atualizado = models.DateTimeField(auto_now=True)
     ativo = models.BooleanField(default=False)
 
     database = 'db_encontrei'
