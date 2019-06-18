@@ -16,17 +16,24 @@ class CategoriaEstabelecimentoSerializer(ModelSerializer):
         ordering = ['titulo']
 
 
-class CategoriaFullSerializer(ModelSerializer):
+class CategoriaEstabelecimentoPreviewSerializer(ModelSerializer):
     class Meta:
         model = Categoria
-        fields = ('id', 'titulo', 'imagem', 'ativo', 'aprovado')
+        fields = ('titulo',)
+        ordering = ['titulo']
+
+
+class CategoriaAdmSerializer(ModelSerializer):
+    class Meta:
+        model = Categoria
+        fields = ('titulo', 'ativo', 'aprovado')
         ordering = ['titulo']
 
     def aprovar_categoria(self, id):
         try:
             categoria = Categoria.objects.get(pk=id)
 
-            serializer = CategoriaFullSerializer(categoria, data={'aprovado': True}, partial=True)
+            serializer = CategoriaAdmSerializer(categoria, data={'aprovado': True}, partial=True)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
@@ -38,7 +45,7 @@ class CategoriaFullSerializer(ModelSerializer):
         try:
             categoria = Categoria.objects.get(pk=id)
 
-            serializer = CategoriaFullSerializer(categoria, data={'aprovado': False}, partial=True)
+            serializer = CategoriaAdmSerializer(categoria, data={'aprovado': False}, partial=True)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
@@ -50,7 +57,7 @@ class CategoriaFullSerializer(ModelSerializer):
         try:
             categoria = Categoria.objects.get(pk=id)
 
-            serializer = CategoriaFullSerializer(categoria, data={'ativo': True}, partial=True)
+            serializer = CategoriaAdmSerializer(categoria, data={'ativo': True}, partial=True)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
@@ -62,7 +69,7 @@ class CategoriaFullSerializer(ModelSerializer):
         try:
             categoria = Categoria.objects.get(pk=id)
 
-            serializer = CategoriaFullSerializer(categoria, data={'ativo': False}, partial=True)
+            serializer = CategoriaAdmSerializer(categoria, data={'ativo': False}, partial=True)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 

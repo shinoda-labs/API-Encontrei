@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from categoria.api.viewsets import CategoriaViewSet
-from estabelecimento.api.viewsets import EstabelecimentoViewSet
+from estabelecimento.api.viewsets import EstabelecimentoViewSet, EstabelecimentoPreviewViewSet
 
 routers = routers.DefaultRouter(trailing_slash=False)
 routers.register(r'api/v1/categoria', CategoriaViewSet, base_name='Categoria')
 routers.register(r'api/v1/estabelecimento', EstabelecimentoViewSet, base_name='Estabelecimento')
+routers.register(r'api/v1/estabelecimento-preview', EstabelecimentoPreviewViewSet, base_name='EstabelecimentoPreview')
 
 urlpatterns = [
     path('', include(routers.urls)),

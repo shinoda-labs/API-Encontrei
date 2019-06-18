@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "26c1cb9b-0d77-4cea-84b5-c29e00872836",
+		"_postman_id": "b7dc57aa-b218-4cac-a2e9-1bf946e6844e",
 		"name": "API Encontrei",
 		"description": "Documentação da API Encontrei",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -72,15 +72,13 @@
 							"formdata": [
 								{
 									"key": "titulo",
-									"value": "Alimentacao",
-									"type": "text",
-									"disabled": true
+									"value": "AADAaaaaaaaaaaaSDASD",
+									"type": "text"
 								},
 								{
 									"key": "imagem",
-									"value": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjZxYecmPHiAhXNG7kGHW-QBvUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbutterfly%2F&psig=AOvVaw1GslkPjWraCIHKdHBN1M_w&ust=1560884015492570",
-									"type": "text",
-									"disabled": true
+									"value": "https://firebasestoaaaaaaaaarage.googleapis.com/v0/b/encontrei-45ddd.appspot.com/o/category_images%2Fvestuario.jpg?alt=media&token=ba3469b0-cde1-4f22-8b81-ef7010b4175e",
+									"type": "text"
 								},
 								{
 									"key": "ativo",
@@ -91,13 +89,13 @@
 							]
 						},
 						"url": {
-							"raw": "{{api_url}}/categoria/6",
+							"raw": "{{api_url}}/categoria/23",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"categoria",
-								"6"
+								"23"
 							]
 						}
 					},
@@ -115,13 +113,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}/categoria/2",
+							"raw": "{{api_url}}/categoria/23",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"categoria",
-								"2"
+								"23"
 							]
 						}
 					},
@@ -143,7 +141,7 @@
 							"formdata": [
 								{
 									"key": "titulo",
-									"value": "Alimentacao",
+									"value": "Teste",
 									"type": "text"
 								},
 								{
@@ -164,6 +162,106 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "PATCH - Categoria (Aprovar)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/categoria/9/aprovar",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"categoria",
+								"9",
+								"aprovar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Categoria (Ativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/categoria/9/ativar",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"categoria",
+								"9",
+								"ativar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Categoria (Desativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/categoria/17/desativar",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"categoria",
+								"17",
+								"desativar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Categoria (Reprovar)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/categoria/9/reprovar",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"categoria",
+								"9",
+								"reprovar"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -171,8 +269,11 @@
 			"name": "Estabelecimento",
 			"item": [
 				{
-					"name": "GET - Estabelecimento",
+					"name": "GET - Estabelecimento Preview",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -182,19 +283,19 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}/estabelecimento",
+							"raw": "{{api_url}}/estabelecimento-preview",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
-								"estabelecimento"
+								"estabelecimento-preview"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GET - Estabelecimento (Categoria)",
+					"name": "GET - Estabelecimento Preview (Categoria)",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -203,8 +304,8 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token}}",
-								"type": "text"
+								"type": "text",
+								"value": "{{token}}"
 							}
 						],
 						"body": {
@@ -218,17 +319,17 @@
 							]
 						},
 						"url": {
-							"raw": "{{api_url}}/estabelecimento?categoria=6",
+							"raw": "{{api_url}}/estabelecimento-preview?categoria=1",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
-								"estabelecimento"
+								"estabelecimento-preview"
 							],
 							"query": [
 								{
 									"key": "categoria",
-									"value": "6"
+									"value": "1"
 								}
 							]
 						}
@@ -236,7 +337,7 @@
 					"response": []
 				},
 				{
-					"name": "GET - Estabelecimento (Categoria) TODO",
+					"name": "GET - Estabelecimento Preview (Titulo)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -247,12 +348,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}/estabelecimento?titulo=Teste",
+							"raw": "{{api_url}}/estabelecimento-preview?titulo=Teste",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
-								"estabelecimento"
+								"estabelecimento-preview"
 							],
 							"query": [
 								{
@@ -276,13 +377,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}/estabelecimento/1",
+							"raw": "{{api_url}}/estabelecimento/2",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"estabelecimento",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -328,78 +429,90 @@
 							"formdata": [
 								{
 									"key": "categoria",
-									"value": "",
+									"value": "8",
 									"type": "text"
 								},
 								{
 									"key": "titulo",
-									"value": "",
+									"value": "wwww",
 									"type": "text"
 								},
 								{
 									"key": "imagem",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "endereco",
-									"value": "",
+									"value": "ASDASDASDADASD",
 									"type": "text"
 								},
 								{
 									"key": "bairro",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "numero",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "cep",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "uf",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "telefone",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "email",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "sobre",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "latitude",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "longitute",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "whatsapp",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "facebook",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -411,6 +524,122 @@
 							"path": [
 								"estabelecimento",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Estabelecimento (Ativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{api_url}}/estabelecimento/6/ativar",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento",
+								"6",
+								"ativar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Estabelecimento (Desativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{api_url}}/estabelecimento/6/desativar",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento",
+								"6",
+								"desativar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Estabelecimento (Aprovar)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{api_url}}/estabelecimento/6/aprovar",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento",
+								"6",
+								"aprovar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Estabelecimento (Reprovar)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{api_url}}/estabelecimento/6/reprovar",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"estabelecimento",
+								"6",
+								"reprovar"
 							]
 						}
 					},
