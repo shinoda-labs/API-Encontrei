@@ -8,8 +8,8 @@ from .serializers import EstabelecimentoSerializer, EstabelecimentoPreviewSerial
 
 
 class EstabelecimentoViewSet(ModelViewSet):
-    permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
+    # authentication_classes = (TokenAuthentication,)
     serializer_class = EstabelecimentoSerializer
 
     def get_queryset(self):

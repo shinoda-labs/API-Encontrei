@@ -8,8 +8,8 @@ from categoria.api.serializers import CategoriaSerializer, CategoriaAdmSerialize
 
 
 class CategoriaViewSet(ModelViewSet):
-    permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    #permission_classes = (IsAuthenticated,)
+    #authentication_classes = (TokenAuthentication,)
     serializer_class = CategoriaSerializer
 
     def get_queryset(self):
