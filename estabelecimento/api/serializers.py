@@ -20,7 +20,6 @@ class EstabelecimentoSerializer(ModelSerializer):
         fields = (
             'id',
             'titulo',
-            'categoria',
             'imagem',
             'endereco_completo',
             'rua',
@@ -34,7 +33,8 @@ class EstabelecimentoSerializer(ModelSerializer):
             'longitude',
             'latitude',
             'whatsapp',
-            'facebook'
+            'facebook',
+            'categoria',
         )
 
     ordering = ['titulo']
