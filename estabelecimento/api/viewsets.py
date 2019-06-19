@@ -33,8 +33,8 @@ class EstabelecimentoViewSet(ModelViewSet):
         return Response(data=estabelecimento, status=200)
 
     @action(methods=['patch'], detail=True)
-    def desativar(self, request, pk):
-        estabelecimento = EstabelecimentoAdmSerializer().desativar_estabelecimento(pk)
+    def inativar(self, request, pk):
+        estabelecimento = EstabelecimentoAdmSerializer().inativar_estabelecimento(pk)
         return Response(data=estabelecimento, status=200)
 
 

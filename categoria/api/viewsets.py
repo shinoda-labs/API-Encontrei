@@ -33,6 +33,6 @@ class CategoriaViewSet(ModelViewSet):
         return Response(data=categoria, status=200)
 
     @action(methods=['patch'], detail=True)
-    def desativar(self, request, pk):
-        categoria = CategoriaAdmSerializer().desativar_categoria(pk)
+    def inativar(self, request, pk):
+        categoria = CategoriaAdmSerializer().inativar_categoria(pk)
         return Response(data=categoria, status=200)

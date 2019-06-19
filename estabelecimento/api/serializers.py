@@ -8,7 +8,15 @@ class EstabelecimentoPreviewSerializer(ModelSerializer):
 
     class Meta:
         model = Estabelecimento
-        fields = ('id', 'titulo', 'categoria', 'imagem', 'latitude', 'longitude')
+        fields = (
+            'id',
+            'titulo',
+            'categoria',
+            'imagem',
+            'latitude',
+            'longitude'
+        )
+
         ordering = ['titulo']
 
 
@@ -20,6 +28,7 @@ class EstabelecimentoSerializer(ModelSerializer):
         fields = (
             'id',
             'titulo',
+            'categoria',
             'imagem',
             'endereco_completo',
             'rua',
@@ -34,7 +43,6 @@ class EstabelecimentoSerializer(ModelSerializer):
             'latitude',
             'whatsapp',
             'facebook',
-            'categoria',
         )
 
     ordering = ['titulo']
@@ -43,7 +51,12 @@ class EstabelecimentoSerializer(ModelSerializer):
 class EstabelecimentoAdmSerializer(ModelSerializer):
     class Meta:
         model = Estabelecimento
-        fields = ('titulo', 'ativo', 'aprovado')
+        fields = (
+            'titulo',
+            'ativo',
+            'aprovado'
+        )
+
         ordering = ['titulo']
 
     def aprovar_estabelecimento(self, id):
@@ -106,7 +119,7 @@ class EstabelecimentoAdmSerializer(ModelSerializer):
             else:
                 raise ValidationError({'error': 'Estabelecimento inexistente'})
 
-    def desativar_estabelecimento(self, id):
+    def inativar_estabelecimento(self, id):
         flag = False
         try:
             estabelecimento = Estabelecimento.objects.get(pk=id)

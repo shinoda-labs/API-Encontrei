@@ -89,7 +89,7 @@ class CategoriaAdmSerializer(ModelSerializer):
             else:
                 raise ValidationError({'error': 'Categoria inexistente'})
 
-    def desativar_categoria(self, id):
+    def inativar_categoria(self, id):
         flag = False
         try:
             categoria = Categoria.objects.get(pk=id)
