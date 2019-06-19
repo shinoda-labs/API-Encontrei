@@ -10,6 +10,7 @@ from categoria.api.serializers import CategoriaSerializer, CategoriaAdmSerialize
 class CategoriaViewSet(ModelViewSet):
     #permission_classes = (IsAuthenticated,)
     #authentication_classes = (TokenAuthentication,)
+    http_method_names = ['get', 'patch', 'delete', 'post']
     serializer_class = CategoriaSerializer
 
     def get_queryset(self):
