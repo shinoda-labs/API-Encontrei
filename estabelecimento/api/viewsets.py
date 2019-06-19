@@ -39,8 +39,8 @@ class EstabelecimentoViewSet(ModelViewSet):
 
 
 class EstabelecimentoPreviewViewSet(ModelViewSet):
-    permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
+    # authentication_classes = (TokenAuthentication,)
     serializer_class = EstabelecimentoPreviewSerializer
     filter_fields = ('categoria',)
 
