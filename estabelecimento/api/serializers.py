@@ -47,10 +47,12 @@ class EstabelecimentoAdmSerializer(ModelSerializer):
         ordering = ['titulo']
 
     def aprovar_estabelecimento(self, id):
+        flag  = False
         try:
             estabelecimento = Estabelecimento.objects.get(pk=id)
 
             if estabelecimento.aprovado is True:
+                flag = True
                 raise
             else:
                 serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'aprovado': True}, partial=True)
@@ -59,13 +61,18 @@ class EstabelecimentoAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'Estabelecimento inexistente ou já está aprovado.'})
+            if flag:
+                raise ValidationError({'error': 'O estabelecimento {} já está aprovado.'.format(id)})
+            else:
+                raise ValidationError({'error': 'Estabelecimento inexistente'})
 
     def reprovar_estabelecimento(self, id):
+        flag = False
         try:
             estabelecimento = Estabelecimento.objects.get(pk=id)
 
             if estabelecimento.aprovado is False:
+                flag = True
                 raise
             else:
                 serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'aprovado': False}, partial=True)
@@ -74,13 +81,18 @@ class EstabelecimentoAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'Estabelecimento inexistente ou já está reprovado.'})
+            if flag:
+                raise ValidationError({'error': 'O estabelecimento {} já está reprovado.'.format(id)})
+            else:
+                raise ValidationError({'error': 'Estabelecimento inexistente'})
 
     def ativar_estabelecimento(self, id):
+        flag = False
         try:
             estabelecimento = Estabelecimento.objects.get(pk=id)
 
             if estabelecimento.ativo is True:
+                flag = True
                 raise
             else:
                 serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'ativo': True}, partial=True)
@@ -89,13 +101,18 @@ class EstabelecimentoAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'Estabelecimento inexistente ou já está ativo.'})
+            if flag:
+                raise ValidationError({'error': 'O estabelecimento {} já está ativo.'.format(id)})
+            else:
+                raise ValidationError({'error': 'Estabelecimento inexistente'})
 
     def desativar_estabelecimento(self, id):
+        flag = False
         try:
             estabelecimento = Estabelecimento.objects.get(pk=id)
 
             if estabelecimento.ativo is False:
+                flag = True
                 raise
             else:
                 serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'ativo': False}, partial=True)
@@ -104,5 +121,8 @@ class EstabelecimentoAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'Estabelecimento inexistente ou já está desativado.'})
+            if flag:
+                raise ValidationError({'error': 'O estabelecimento {} já está inativo.'.format(id)})
+            else:
+                raise ValidationError({'error': 'Estabelecimento inexistente'})
 
