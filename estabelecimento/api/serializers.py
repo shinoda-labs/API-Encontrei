@@ -50,47 +50,59 @@ class EstabelecimentoAdmSerializer(ModelSerializer):
         try:
             estabelecimento = Estabelecimento.objects.get(pk=id)
 
-            serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'aprovado': True}, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
+            if estabelecimento.aprovado is True:
+                raise
+            else:
+                serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'aprovado': True}, partial=True)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
 
-            return serializer.data
+                return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'O Estabelecimento com o código {} não existe.'.format(id)})
+            raise ValidationError({'error': 'Estabelecimento inexistente ou já está aprovado.'})
 
     def reprovar_estabelecimento(self, id):
         try:
             estabelecimento = Estabelecimento.objects.get(pk=id)
 
-            serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'aprovado': False}, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
+            if estabelecimento.aprovado is False:
+                raise
+            else:
+                serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'aprovado': False}, partial=True)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
 
-            return serializer.data
+                return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'O Estabelecimento com o código {} não existe.'.format(id)})
+            raise ValidationError({'error': 'Estabelecimento inexistente ou já está reprovado.'})
 
     def ativar_estabelecimento(self, id):
         try:
             estabelecimento = Estabelecimento.objects.get(pk=id)
 
-            serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'ativo': True}, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
+            if estabelecimento.ativo is True:
+                raise
+            else:
+                serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'ativo': True}, partial=True)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
 
-            return serializer.data
+                return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'O Estabelecimento com o código {} não existe.'.format(id)})
+            raise ValidationError({'error': 'Estabelecimento inexistente ou já está ativo.'})
 
     def desativar_estabelecimento(self, id):
         try:
             estabelecimento = Estabelecimento.objects.get(pk=id)
 
-            serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'ativo': False}, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
+            if estabelecimento.ativo is False:
+                raise
+            else:
+                serializer = EstabelecimentoAdmSerializer(estabelecimento, data={'ativo': False}, partial=True)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
 
-            return serializer.data
+                return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'O Estabelecimento com o código {} não existe.'.format(id)})
+            raise ValidationError({'error': 'Estabelecimento inexistente ou já está desativado.'})
 
