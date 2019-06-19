@@ -200,13 +200,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}/categoria/7/ativar",
+							"raw": "{{api_url}}/categoria/17/ativar",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"categoria",
-								"7",
+								"17",
 								"ativar"
 							]
 						}
@@ -214,25 +214,25 @@
 					"response": []
 				},
 				{
-					"name": "PATCH - Categoria (Desativar)",
+					"name": "PATCH - Categoria (Inativar)",
 					"request": {
 						"method": "PATCH",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token}}",
-								"type": "text"
+								"type": "text",
+								"value": "{{token}}"
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}/categoria/17/desativar",
+							"raw": "{{api_url}}/categoria/17/inativar",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"categoria",
 								"17",
-								"desativar"
+								"inativar"
 							]
 						}
 					},
@@ -377,13 +377,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}/estabelecimento/2",
+							"raw": "{{api_url}}/estabelecimento/6",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"estabelecimento",
-								"2"
+								"6"
 							]
 						}
 					},
@@ -430,11 +430,12 @@
 								{
 									"key": "categoria",
 									"value": "8",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "titulo",
-									"value": "wwww",
+									"value": "Lojas Pompéia",
 									"type": "text"
 								},
 								{
@@ -446,7 +447,8 @@
 								{
 									"key": "endereco",
 									"value": "ASDASDASDADASD",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "bairro",
@@ -517,13 +519,13 @@
 							]
 						},
 						"url": {
-							"raw": "{{api_url}}/estabelecimento/2",
+							"raw": "{{api_url}}/estabelecimento/6",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"estabelecimento",
-								"2"
+								"6"
 							]
 						}
 					},
@@ -559,7 +561,7 @@
 					"response": []
 				},
 				{
-					"name": "PATCH - Estabelecimento (Desativar)",
+					"name": "PATCH - Estabelecimento (Inativar)",
 					"request": {
 						"method": "PATCH",
 						"header": [
@@ -574,14 +576,14 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{api_url}}/estabelecimento/6/desativar",
+							"raw": "{{api_url}}/estabelecimento/6/inativar",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"estabelecimento",
 								"6",
-								"desativar"
+								"inativar"
 							]
 						}
 					},
@@ -647,6 +649,18 @@
 				},
 				{
 					"name": "POST - Estabelecimento",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cf3679ba-20e6-4399-b4f6-8196b61fd930",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -661,7 +675,7 @@
 							"formdata": [
 								{
 									"key": "categoria",
-									"value": "1",
+									"value": "6",
 									"type": "text"
 								},
 								{

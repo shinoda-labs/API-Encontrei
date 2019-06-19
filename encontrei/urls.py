@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from rest_framework.authtoken.views import obtain_auth_token
+
 from categoria.api.viewsets import CategoriaViewSet
 from estabelecimento.api.viewsets import EstabelecimentoViewSet, EstabelecimentoPreviewViewSet
 
@@ -26,5 +28,6 @@ routers.register(r'api/v1/estabelecimento-preview', EstabelecimentoPreviewViewSe
 
 urlpatterns = [
     path('', include(routers.urls)),
+    # path('api-token-auth', obtain_auth_token),
     path('admin', admin.site.urls),
 ]
