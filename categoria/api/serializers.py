@@ -30,10 +30,12 @@ class CategoriaAdmSerializer(ModelSerializer):
         ordering = ['titulo']
 
     def aprovar_categoria(self, id):
+        flag = False
         try:
             categoria = Categoria.objects.get(pk=id)
 
             if categoria.aprovado is True:
+                flag = True
                 raise
             else:
                 serializer = CategoriaAdmSerializer(categoria, data={'aprovado': True}, partial=True)
@@ -42,13 +44,18 @@ class CategoriaAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'Categoria inexistente ou já esta aprovada.'})
+            if flag:
+                raise ValidationError({'error': 'A categoria {} já está aprovada.'.format(id)})
+            else:
+                raise ValidationError({'error': 'Categoria inexistente'})
 
     def reprovar_categoria(self, id):
+        flag = False
         try:
             categoria = Categoria.objects.get(pk=id)
 
             if categoria.aprovado is False:
+                flag = True
                 raise
             else:
                 serializer = CategoriaAdmSerializer(categoria, data={'aprovado': False}, partial=True)
@@ -57,13 +64,18 @@ class CategoriaAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'Categoria inexistente ou já esta reprovada.'})
+            if flag:
+                raise ValidationError({'error': 'A categoria {} já está reprovada.'.format(id)})
+            else:
+                raise ValidationError({'error': 'Categoria inexistente'})
 
     def ativar_categoria(self, id):
+        flag = False
         try:
             categoria = Categoria.objects.get(pk=id)
 
             if categoria.ativo is True:
+                flag = True
                 raise
             else:
                 serializer = CategoriaAdmSerializer(categoria, data={'ativo': True}, partial=True)
@@ -72,13 +84,18 @@ class CategoriaAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'Categoria inexistente ou já esta ativa.'})
+            if flag:
+                raise ValidationError({'error': 'A categoria {} já está ativa.'.format(id)})
+            else:
+                raise ValidationError({'error': 'Categoria inexistente'})
 
     def desativar_categoria(self, id):
+        flag = False
         try:
             categoria = Categoria.objects.get(pk=id)
 
             if categoria.ativo is False:
+                flag = True
                 raise
             else:
                 serializer = CategoriaAdmSerializer(categoria, data={'ativo': False}, partial=True)
@@ -87,4 +104,7 @@ class CategoriaAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'Categoria inexistente ou já está desativada..'})
+            if flag:
+                raise ValidationError({'error': 'A categoria {} já está inativa.'.format(id)})
+            else:
+                raise ValidationError({'error': 'Categoria inexistente'})

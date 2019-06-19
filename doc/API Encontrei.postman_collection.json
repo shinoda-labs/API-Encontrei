@@ -175,13 +175,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}/categoria/9/aprovar",
+							"raw": "{{api_url}}/categoria/7/aprovar",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"categoria",
-								"9",
+								"7",
 								"aprovar"
 							]
 						}
@@ -200,13 +200,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}/categoria/9/ativar",
+							"raw": "{{api_url}}/categoria/7/ativar",
 							"host": [
 								"{{api_url}}"
 							],
 							"path": [
 								"categoria",
-								"9",
+								"7",
 								"ativar"
 							]
 						}
@@ -295,7 +295,7 @@
 					"response": []
 				},
 				{
-					"name": "GET - Estabelecimento Preview (Categoria)",
+					"name": "GET - Estabelecimento Preview (Categoria ID)",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -661,77 +661,77 @@
 							"formdata": [
 								{
 									"key": "categoria",
-									"value": "",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "titulo",
-									"value": "",
+									"value": "teste",
 									"type": "text"
 								},
 								{
 									"key": "imagem",
-									"value": "",
+									"value": "https://www.google.com",
 									"type": "text"
 								},
 								{
-									"key": "endereco",
-									"value": "",
+									"key": "rua",
+									"value": "teste",
 									"type": "text"
 								},
 								{
 									"key": "bairro",
-									"value": "",
+									"value": "teste",
 									"type": "text"
 								},
 								{
 									"key": "numero",
-									"value": "",
+									"value": "123",
 									"type": "text"
 								},
 								{
 									"key": "cep",
-									"value": "",
+									"value": "96180000",
 									"type": "text"
 								},
 								{
 									"key": "uf",
-									"value": "",
+									"value": "rs",
 									"type": "text"
 								},
 								{
 									"key": "telefone",
-									"value": "",
+									"value": "51996236798",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "",
+									"value": "rodrigo.viegas@ulbra.inf.br",
 									"type": "text"
 								},
 								{
 									"key": "sobre",
-									"value": "",
+									"value": "Lorem Ipsm",
 									"type": "text"
 								},
 								{
 									"key": "latitude",
-									"value": "",
+									"value": "-25.6547",
 									"type": "text"
 								},
 								{
-									"key": "longitute",
-									"value": "",
+									"key": "longitude",
+									"value": "-58.5468",
 									"type": "text"
 								},
 								{
 									"key": "whatsapp",
-									"value": "",
+									"value": "92992959952",
 									"type": "text"
 								},
 								{
 									"key": "facebook",
-									"value": "",
+									"value": "https://www.google.com",
 									"type": "text"
 								}
 							]
