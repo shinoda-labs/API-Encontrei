@@ -6,7 +6,7 @@ class Categoria(models.Model):
         db_table = 'tb_categoria'
 
     id = models.AutoField(primary_key=True, editable=False, auto_created=True)
-    titulo = models.CharField(max_length=50)
+    titulo = models.CharField(max_length=50, unique=True)
     imagem = models.URLField(max_length=255)
     criado = models.DateTimeField(auto_now_add=True)
     atualizado = models.DateTimeField(auto_now=True)

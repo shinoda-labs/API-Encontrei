@@ -8,7 +8,7 @@ class Estabelecimento(models.Model):
 
     id = models.AutoField(primary_key=True, editable=False, auto_created=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
-    titulo = models.CharField(max_length=50)
+    titulo = models.CharField(max_length=50, unique=True)
     imagem = models.URLField(max_length=255)
     rua = models.CharField(max_length=100)
     numero = models.CharField(max_length=10)
