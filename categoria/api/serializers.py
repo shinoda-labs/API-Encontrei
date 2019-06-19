@@ -26,53 +26,65 @@ class CategoriaEstabelecimentoPreviewSerializer(ModelSerializer):
 class CategoriaAdmSerializer(ModelSerializer):
     class Meta:
         model = Categoria
-        fields = ('titulo', 'ativo', 'aprovado')
+        fields = ('id', 'titulo', 'ativo', 'aprovado')
         ordering = ['titulo']
 
     def aprovar_categoria(self, id):
         try:
             categoria = Categoria.objects.get(pk=id)
 
-            serializer = CategoriaAdmSerializer(categoria, data={'aprovado': True}, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
+            if categoria.aprovado is True:
+                raise
+            else:
+                serializer = CategoriaAdmSerializer(categoria, data={'aprovado': True}, partial=True)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
 
-            return serializer.data
+                return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'A Categoria com o código {} não existe.'.format(id)})
+            raise ValidationError({'error': 'Categoria inexistente ou já esta aprovada.'})
 
     def reprovar_categoria(self, id):
         try:
             categoria = Categoria.objects.get(pk=id)
 
-            serializer = CategoriaAdmSerializer(categoria, data={'aprovado': False}, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
+            if categoria.aprovado is False:
+                raise
+            else:
+                serializer = CategoriaAdmSerializer(categoria, data={'aprovado': False}, partial=True)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
 
-            return serializer.data
+                return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'A Categoria com o código {} não existe.'.format(id)})
+            raise ValidationError({'error': 'Categoria inexistente ou já esta reprovada.'})
 
     def ativar_categoria(self, id):
         try:
             categoria = Categoria.objects.get(pk=id)
 
-            serializer = CategoriaAdmSerializer(categoria, data={'ativo': True}, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
+            if categoria.ativo is True:
+                raise
+            else:
+                serializer = CategoriaAdmSerializer(categoria, data={'ativo': True}, partial=True)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
 
-            return serializer.data
+                return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'A Categoria com o código {} não existe.'.format(id)})
+            raise ValidationError({'error': 'Categoria inexistente ou já esta ativa.'})
 
     def desativar_categoria(self, id):
         try:
             categoria = Categoria.objects.get(pk=id)
 
-            serializer = CategoriaAdmSerializer(categoria, data={'ativo': False}, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
+            if categoria.ativo is False:
+                raise
+            else:
+                serializer = CategoriaAdmSerializer(categoria, data={'ativo': False}, partial=True)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
 
-            return serializer.data
+                return serializer.data
         except Exception as e:
-            raise ValidationError({'error': 'A Categoria com o código {} não existe.'.format(id)})
+            raise ValidationError({'error': 'Categoria inexistente ou já está desativada..'})
