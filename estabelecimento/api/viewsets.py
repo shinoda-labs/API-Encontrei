@@ -8,8 +8,8 @@ from .serializers import EstabelecimentoSerializer, EstabelecimentoPreviewSerial
 
 
 class EstabelecimentoViewSet(ModelViewSet):
-    # permission_classes = (IsAuthenticated,)
-    # authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     http_method_names = ['get', 'patch', 'delete', 'post']
     serializer_class = EstabelecimentoSerializer
 

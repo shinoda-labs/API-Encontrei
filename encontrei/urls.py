@@ -28,6 +28,6 @@ routers.register(r'api/v1/estabelecimento-preview', EstabelecimentoPreviewViewSe
 
 urlpatterns = [
     path('', include(routers.urls)),
-    # path('api-token-auth', obtain_auth_token),
+    path('api-token-auth', obtain_auth_token),
     path('admin', admin.site.urls),
 ]
