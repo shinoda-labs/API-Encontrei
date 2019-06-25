@@ -28,11 +28,11 @@ class Estabelecimento(models.Model):
     aprovado = models.BooleanField(default=False)
     ativo = models.BooleanField(default=True)
 
+    database = 'db_encontrei'
+
     @property
     def endereco_completo(self):
         return "{}, N°{}, {} - {} - {} / {}".format(self.rua, self.numero, self.bairro, self.cidade, self.cep, self.uf)
-
-    database = 'db_encontrei'
 
     def __str__(self):
         return self.titulo
